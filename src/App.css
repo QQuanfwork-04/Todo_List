@@ -67,6 +67,8 @@
   width: 70%;
   background-color: var(--bg);
   flex-direction: column;
+  flex: 1;
+  align-items: flex-start;
 }
 .checkbox-container {
   display: flex;
