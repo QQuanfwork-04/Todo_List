@@ -94,6 +94,9 @@
   gap: 8px;         
   cursor: pointer;       
 }
+#lable_check:hover {
+  cursor: pointer;
+}
 .priority-dot {
   width: 10px;
   height: 10px;
