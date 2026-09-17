@@ -56,25 +56,70 @@
   }
 }
 
+.todo-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 #middle_content{
   display: flex;
-  justify-content: left;
-  gap: 10px;
-  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+}
+#middle_content .todo-item {
+  border-bottom: 1px solid #6b7280;
+  padding: 12px 0;
 }
 #r-side{
   display: flex;
-  width: 70%;
   background-color: var(--bg);
   flex-direction: column;
-  flex: 1;
+  flex: 7;
+  gap: 12px;
+  padding: 12px 6px;
   align-items: flex-start;
+}
+#l-side{
+  flex: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end;
 }
 .checkbox-container {
   display: flex;
   align-items: center;   
   gap: 8px;         
   cursor: pointer;       
+}
+.priority-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  background-color: #22c55e;
+}
+.due-date {
+font-size: 14px;
+background-color:rgb(245, 230, 230);
+color: #6b7280;
+padding: 4px 10px;
+border-radius: 12px;
+
+}
+.priority-dot.low {
+  background-color: #22c55e; /* xanh lá */
+}
+
+.priority-dot.medium {
+  background-color: #f59e0b; /* vàng/cam */
+}
+
+.priority-dot.high {
+  background-color: #ef4444; /* đỏ */
 }
 #center {
   display: flex;
