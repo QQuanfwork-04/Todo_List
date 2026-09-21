@@ -67,10 +67,10 @@ const List = () => {
         {todos.map((todo) => (
           <div key={todo.id} className="todo-item">
             <div id="r-side">
-              <label id="lable_check" key={todo.id}>
-                <input
+              <label className="label-check" key={todo.id}>
+                <input className="label-checkbox"
                   type="checkbox"
-                  checked={todo.id === 1}
+                  checked={todo.isCompleted}
                 />
                 <span
                   style={{
@@ -84,6 +84,7 @@ const List = () => {
             <div id="l-side">
               <span className={`priority-dot ${todo.priority}`}></span>
               <span className="due-date">{todo.date}</span>
+              <button className="Delete-btn"> {'\u{1F5D1}'} </button>
             </div>
           </div>
         ))}

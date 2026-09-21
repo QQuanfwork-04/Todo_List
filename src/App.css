@@ -124,6 +124,11 @@ main {
   padding: 10px;
   
 }
+.filter-status:hover{
+  cursor: pointer;
+  background-color: #f59e0b;
+  color : #fff;
+}
 
 .card-footer {
   display: block;
@@ -181,8 +186,24 @@ main {
   padding: 12px;
 }
 .todo-item {
-  border-bottom: 1px solid #6b7280;
+  border-bottom: 1px solid #ECE6DC;
   padding: 12px 0;
+}
+.Delete-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  color: #918381;
+  background-color:#fff;
+  opacity: 0;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+.Delete-btn:hover{
+  opacity: 1;
+  color: #ff6B57;
+  background-color: rgba(239, 158, 158, 0.5);
 }
 
 #r-side {
@@ -201,20 +222,28 @@ main {
   gap: 12px;
   justify-content: flex-end;
 }
-.checkbox-container {
+.label-check > input {
   display: flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
 }
-#lable_check {
+.label-check {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-#lable_check:hover {
-  cursor: pointer;
+.label-checkbox{
+  appearance: none;
+  border: 2px solid #ECE6DC;
+  border-radius: 3px;
+  color: #ffff;
+  width:15px;
+  height:15px;
 }
+/* .label-check:hover {
+  cursor: pointer;
+} */
 .priority-dot {
   width: 10px;
   height: 10px;
