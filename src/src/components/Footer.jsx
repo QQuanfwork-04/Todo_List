@@ -2,7 +2,24 @@ const Footer = () => {
   return (
     <div className="card-footer">
       <div className="progress-block">
-        <p>Code in this</p>
+        <div className="progress-label">
+          <span className="completed-text">
+           <div className="c-text">
+             <p><strong>3</strong> of 7 completed </p>
+           </div>
+            <div className="progress-right" style={{color: "black"}}>
+              <span styl className="percent-text">43%</span>
+            </div>
+          </span>
+          <div className="progress-bar">
+            <div className="progress-bar-fill" style={{ width: "43%" }}></div>
+          </div>
+        </div>
+      </div>
+      <div className="progress-btn">
+        <button className="clear-btn" type="button">
+          Clear completed
+        </button>
       </div>
     </div>
   );
