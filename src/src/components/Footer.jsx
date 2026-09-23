@@ -3,14 +3,14 @@ const Footer = () => {
     <div className="card-footer">
       <div className="progress-block">
         <div className="progress-label">
-          <span className="completed-text">
+          <div className="completed-text">
            <div className="c-text">
-             <p><strong>3</strong> of 7 completed </p>
+             <span><strong>3</strong> of 7 completed </span>
            </div>
             <div className="progress-right" style={{color: "black"}}>
               <span styl className="percent-text">43%</span>
             </div>
-          </span>
+          </div>
           <div className="progress-bar">
             <div className="progress-bar-fill" style={{ width: "43%" }}></div>
           </div>

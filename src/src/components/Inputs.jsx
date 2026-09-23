@@ -8,7 +8,7 @@ const Inputs = () => {
           placeholder="Add a new task"
         />
         <input
-          style={{ width: "146px", height: "45px" }}
+          style={{ width: "146px", height: "45px" , fontSize: "13.5px"}}
           type="date"
           aria-lable="Due date"
           value={new Date()}

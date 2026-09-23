@@ -8,17 +8,17 @@ const Header = () => {
         weekday: "long",
         month: "long",
         day: "numeric",
-      }) + " - "
+      }) + " · "
     );
   };
 
   return (
     <div className="head-card">
       <div className="head-logo">
-        <p>&#10004;</p>
+        <img src="/checked.png" alt="check"/>
       </div>
       <div className="head-note">
-        <h2 className="head-title">Today's Focus</h2>
+        <h1 className="head-title">Today's Focus</h1>
         <p className="head-desc">
             <strong>{formatHeaderDate(new Date())}</strong>
              7 tasks </p>
