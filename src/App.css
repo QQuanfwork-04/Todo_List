@@ -68,6 +68,9 @@ main {
 .head-desc {
   margin: 0;
 }
+.head-desc strong{
+  font-weight: 600;
+}
 .card {
   display: block;
   background-color: #fff;
@@ -94,8 +97,17 @@ main {
   border-radius: 13px;
   margin-bottom: 7px;
   flex-grow: 1;
-  text-indent: 9px;
+  padding-left: 7px;
   box-sizing: border-box;
+}
+.card-form .add-form > input[type="date"]{
+  padding-right: 9px;
+  cursor: pointer;
+}
+.card-form .add-form > input[type="date"]::-webkit-calendar-picker-indicator {
+  position: relative;
+  right: 4px;
+  cursor: pointer;
 }
 .card-form .add-form > select {
   font-size: 13.5px;
@@ -115,6 +127,7 @@ main {
   font-weight: bolder;
   border-radius: 16px;
   padding: 15px;
+  cursor: pointer;
 }
 .card-form .add-form {
   width: 100%;
@@ -177,21 +190,16 @@ main {
   justify-content: center;
   align-items: center;
 }
-.progress-block {
-  display: flex;
-  width: 70%;
-}
+
 .progress-label {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-bottom: 6px;
+  display: block;
+  width: 387px;
+  height: 30px;
 }
 .progress-bar {
   display: flex;
-  width: 100%;
-  height: 10px;
-  margin-top: 10px;
+  width: 387px;
+  height: 8px;
   background-color: #e5e7eb;
   border-radius: 999px;
   overflow: hidden;
@@ -203,29 +211,29 @@ main {
   transition: width 0.3 ease;
 }
 .progress-btn {
-  margin: auto;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .c-text {
-  font-size: 15px;
+  font-size: 12px;
 }
 .clear-btn {
+  width: 104px;
+  height: 29px;
   font-size: 12.5px;
   font-weight: bold;
   background: transparent;
   border: none;
   color: #8b8496;
   cursor: pointer;
-  padding: 16px;
+  padding: 6px 4px;
   border-radius: 13px;
 }
 .clear-btn:hover {
   opacity: 1;
   color: #ef4444;
 }
-.clear-btn:active {
-  color: white;
-  background-color: red;
-}
+
 .completed-text {
   display: flex;
   height: fit-content;
@@ -233,7 +241,8 @@ main {
   align-items: center;
   color: #8b8496;
   font-weight: bold;
-  gap: 16px;
+  margin-bottom: 6px;
+  /* gap: 16px; */
 }
 .completed-text strong {
   color: #201c29;
@@ -284,15 +293,16 @@ main {
   align-items: center;
   width: 100%;
   cursor: pointer;
+  border-bottom: 1px solid #ece6dc;
+  padding: 12px 0;
 }
 #middle_content {
   display: flex;
   flex-direction: column;
-  padding: 12px;
+  padding: 0 12px 12px 12px;
 }
-.todo-item {
-  border-bottom: 1px solid #ece6dc;
-  padding: 12px 0;
+.todo-item:last-child{
+  border-bottom: none;
 }
 .Delete-btn {
   display: flex;
@@ -362,7 +372,7 @@ align-items: center;
 }
 .label-checkbox {
   appearance: auto;
-  /* border: 2px solid #ece6dc; */
+  border: 2px solid #ece6dc;
   border-radius: 3px;
   color: #ffff;
   width: 22px;

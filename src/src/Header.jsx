@@ -19,7 +19,7 @@ const Header = () => {
       </div>
       <div className="head-note">
         <h1 className="head-title">Today's Focus</h1>
-        <p className="head-desc">
+        <p style = {{fontSize: "13.5px"}} className="head-desc">
             <strong>{formatHeaderDate(new Date())}</strong>
              7 tasks </p>
       </div>
