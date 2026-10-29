@@ -1,4 +1,5 @@
-const Header = () => {
+const Header = ({todos}) => {
+  const totalTask = todos.length;
   const formatHeaderDate = (dateString) => {
     if (!dateString) return "";
 
@@ -21,7 +22,7 @@ const Header = () => {
         <h1 className="head-title">Today's Focus</h1>
         <p style = {{fontSize: "13.5px"}} className="head-desc">
             <strong>{formatHeaderDate(new Date())}</strong>
-             7 tasks </p>
+             {totalTask} task </p>
       </div>
     </div>
   );

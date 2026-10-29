@@ -1,88 +1,94 @@
 import { useState } from "react";
 
-const List = () => {
-  const [todos] = useState([
-    {
-      id: 1,
-      text: "Set up project folder structure",
-      priority: "low",
-      date: "Oct 12",
-      isCompleted: true,
-    },
-    {
-      id: 2,
-      text: "Learn Flexbox basics",
-      priority: "medium",
-      date: "Sep 14",
-      isCompleted: true,
-    },
-    {
-      id: 3,
-      text: "Build the todo list layout",
-      priority: "low",
-      date: "Nov 18",
-      isCompleted: false,
-    },
-    {
-      id: 4,
-      text: "Style checkbox with pure CSS",
-      priority: "high",
-      date: "Aug 14",
-      isCompleted: true,
-    },
-    {
-      id: 5,
-      text: "Practice CSS Grid",
-      priority: "high",
-      date: "May 01",
-      isCompleted: false,
-    },
-    {
-      id: 6,
-      text: "Add responsive media queries",
-      priority: "low",
-      date: "Dec 19",
-      isCompleted: false,
-    },
-    {
-      id: 7,
-      text: "Review pseudo-classes (:hover, :focus, :checked)",
-      priority: "medium",
-      date: "Jan 01",
-      isCompleted: false,
-    },
-  ]);
+const List = ({todos, setTodos}) => {
+  const filters = [
+    { id: 1, text: "All" },
+    { id: 2, text: "Active" },
+    { id: 3, text: "Completed" },
+  ];
+  const [activeFilter, setActiveFilter] = useState(1);
+
+  const filterTodos = todos.filter((item) => {
+  if (activeFilter === 2) {
+    return !item.isCompleted;
+  }
+
+  if (activeFilter === 3) {
+    return item.isCompleted;
+  }
+
+  return true;
+});
+
+  function onCompleteById(array, id) {
+    const arrCom = array.map((item) =>
+      item.id === id
+        ? {
+            ...item,
+            isCompleted: !item.isCompleted,
+            // output array bi doi isCompleted
+          }
+        : item,
+    );
+    return arrCom;
+  }
+
+  function onDeleteById(array, id) {
+    const arrDel = array.filter((item) => item.id !== id);
+    // output array remove item co id
+    return arrDel;
+  }
+
+  function handleOnClick(id) {
+    //input id
+    console.log("Click");
+    setTodos((prevTodos) => onCompleteById(prevTodos, id));
+  }
+
+  function handleDelete(id) {
+    // input id
+    //output array ma remove item co id truyen vao
+    console.log("delete");
+    setTodos((delTodos) => onDeleteById(delTodos, id));
+  }
+  function handleFilter(id) {
+  console.log("filter")
+  setActiveFilter(id);
+  
+}
+
+
   return (
-    <div>
+    <div className="filter-options">
       {/* <div className="filter-option"> */}
       <div className="filter-tabs">
-        <label className="filter-status" for="filter-all">
-          All
-        </label>
-        <label className="filter-status" for="filter-active">
-          Active
-        </label>
-        <label className="filter-status" for="filter-completed">
-          Completed
-        </label>
+        {filters.map((filstate) => (
+          <div
+            key={filstate.id}
+            className={
+              activeFilter === filstate.id
+                ? "filter-status-checked filter-status"
+                : "filter-status"
+            }
+            onClick={() => handleFilter(filstate.id)}
+          >
+            {filstate.text}
+          </div>
+          
+        ))}
       </div>
       {/* </div> */}
-      <section id="middle_content">
-        {todos.map((todo) => (
+      <section className="middle_content" id="middle_content">
+        {filterTodos.map((todo) => (
           <div key={todo.id} className="todo-item">
             <div id="r-side">
               <label className="label-check" key={todo.id}>
-                <input
-                  className="real-checkbox"
-                  type="checkbox"
-                  checked={todo.isCompleted}
-                  readOnly
-                />
-                <span
+                <div
+                  onClick={() => handleOnClick(todo.id)}
                   className={`label-checkbox ${
                     todo.isCompleted ? "checked" : ""
                   }`}
-                ></span>
+                />
                 <span
                   style={{
                     textDecoration: todo.isCompleted ? "line-through" : "none",
@@ -97,7 +103,10 @@ const List = () => {
                 <span className={`priority-dot ${todo.priority}`}></span>
               </div>
               <span className="due-date">{todo.date}</span>
-              <button className="Delete-btn">
+              <button
+                onClick={() => handleDelete(todo.id)}
+                className="Delete-btn"
+              >
                 <svg
                   width="14"
                   height="14"
