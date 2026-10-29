@@ -85,39 +85,70 @@ main {
   color: #201c29;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 20px;
+  gap: 6px;
   flex-wrap: wrap;
 }
-.card-form .add-form > input {
-  border: 2px solid #ece6dc;
-  font-size: 14.5px;
-  background-color: var(--ip-color);
+
+.todo-add-info{
+  display: flex;
+  gap: 13px;
+  width: 100%;
+}
+.todo-task-1
+{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   font-weight: lighter;
-  margin-right: 7px;
-  border-radius: 13px;
-  margin-bottom: 7px;
-  flex-grow: 1;
-  padding-left: 7px;
   box-sizing: border-box;
 }
-.card-form .add-form > input[type="date"]{
-  padding-right: 9px;
-  cursor: pointer;
+.todo-date-1,
+.todo-priority-1
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  min-width: 0;
+  font-weight: lighter;
+  box-sizing: border-box;
 }
-.card-form .add-form > input[type="date"]::-webkit-calendar-picker-indicator {
+.todo-task{
+  border: 2px solid #ece6dc;
+  border-radius: 13px;
+  font-size: 14.5px;
+  padding: 13px 55px 16px 13px;
+  background-color: var(--ip-color);
+}
+.todo-date{
+  cursor: pointer;
+  border: 2px solid #ece6dc;
+  border-radius: 13px;
+  padding: 13px 4px 13px 5px;
+  background-color: var(--ip-color);
+  font-size: 14.5px;
+  
+}
+.todo-date::-webkit-calendar-picker-indicator {
   position: relative;
-  right: 4px;
+  right: 3px;
   cursor: pointer;
 }
-.card-form .add-form > select {
-  font-size: 13.5px;
+.todo-priority {
+  font-size: 14.5px;
   border: 2px solid #ece6dc;
   background-color: var(--ip-color);
   font-weight: lighter;
   border-radius: 13px;
   text-align: center;
 }
-.card-form .add-form > button {
+
+
+.todo-btn{
+  display: flex;
+  gap: 13px;
+  width: 100%;
+}
+.btn-add {
   width: 85px;
   height: 44px;
   font-size: 14.5px;
@@ -128,11 +159,20 @@ main {
   border-radius: 16px;
   padding: 15px;
   cursor: pointer;
+  flex: 1;
 }
-.card-form .add-form {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+.btn-select-all{
+  width: 100px;
+  height: 44px;
+  font-size: 15px;
+  border: none;
+  background-color: lightpink;
+  color: #ffff;
+  font-weight: bolder;
+  border-radius: 16px;
+  padding: 15px;
+  cursor: pointer;
+  flex: 1;
 }
 
 .filter-option {
@@ -192,13 +232,13 @@ main {
 }
 
 .progress-label {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 387px;
   height: 30px;
 }
 .progress-bar {
   display: flex;
-  width: 387px;
   height: 8px;
   background-color: #e5e7eb;
   border-radius: 999px;
@@ -297,6 +337,7 @@ main {
   padding: 12px 0;
 }
 #middle_content {
+  min-height: 250px;
   display: flex;
   flex-direction: column;
   padding: 0 12px 12px 12px;
@@ -342,7 +383,7 @@ main {
   gap: 12px;
   flex: 1;
   width: 336px;
-  height: 20px;
+  height: 22px;
   align-items: center;
 }
 #l-side {
@@ -425,4 +466,55 @@ font-weight: bold;
 
 .priority-dot.high {
   background-color: #ef4444;
+}
+@media (max-width: 767px) {
+  .todo-add-info{
+    width: 100%;
+  }
+  .todo-task-1{
+    min-width: 0;
+    flex: 2;
+    align-items: normal;
+  }
+  .todo-date-1,
+  .todo-priority-1{
+    min-width: 0;
+    flex: 1;
+    align-items: normal;
+  }
+  .todo-priority{
+    width: auto !important;
+  }
+  .todo-task{
+    padding: 13px 40px 16px 13px;
+  }
+  .todo-item{
+    width: auto;
+    font-size: 13px;
+  }
+  .label-checkbox{
+    flex-shrink: 0;
+    width: 15px;
+    height: 15px;
+  }
+  .label-checkbox.checked::before{
+    height:15px
+  }
+  #r-side{
+    display: flex;
+    align-items: center;
+  }
+  .text-task {
+    flex: 1;
+    min-width: 0;
+  }
+  .card-form{
+    width: auto;
+  }
+  .card-footer{
+    width: auto;
+  }
+  .progress-label{
+    min-width: 0;
+  }
 }

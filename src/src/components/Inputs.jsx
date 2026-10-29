@@ -106,11 +106,11 @@ const Inputs = ({ onAdd, onSelectAll }) => {
         {dateError && <div style={{ color: "red" }}>{dateError}</div>}
       </div>
 
-      <div>
+      <div className="todo-priority-1">
         <select
           id = "todo-priority"
           className="todo-priority"
-          style={{ width: "96px", height: "45px" }}
+          style={{ width: "96px", height: "47px" }}
           onChange={(e) => setPriority(e.target.value)}
         >
           {priorityList.map((item) => (

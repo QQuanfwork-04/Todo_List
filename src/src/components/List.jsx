@@ -90,6 +90,7 @@ const List = ({todos, setTodos}) => {
                   }`}
                 />
                 <span
+                  className="text-task"
                   style={{
                     textDecoration: todo.isCompleted ? "line-through" : "none",
                   }}
