@@ -67,8 +67,8 @@ const List = ({todos, setTodos}) => {
             key={filstate.id}
             className={
               activeFilter === filstate.id
-                ? "filter-status-checked filter-status"
-                : "filter-status"
+                ? "filter-status-checked filter-status active"
+                : "filter-status "
             }
             onClick={() => handleFilter(filstate.id)}
           >
